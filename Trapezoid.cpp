@@ -31,9 +31,15 @@ double Trapezoid::computeArea(double b1, double b2, double h){
 
 double Trapezoid::computeHeight(int x1, int y1, int x2, int y2, int x3, int y3)  {
     double A,B,C;
+    /*
+     * use formula (y-y1)(x2-x1)-(y2-y1)(x-x1 = 0)
+     */
     A = y1-y2;
     B = x2-x1;
     C = -y1*x2+x1*y1+y2*x1-x1*y1;
+    /*
+     * use formula d = |Axp +Bxp + C|/(A^2 +b^2)^1/2
+     */
     return fabs(A*x3 + B*y3 + C)/sqrt(pow(A,2)+pow(B,2));
 }
 
