@@ -2,11 +2,12 @@
 #include "Quadrangle.h"
 #include "Trapezoid.h"
 #include "Rhomboid.h"
+#include "Rectangle.h"
 
 using namespace std;
 
 int main() {
-    Rhomboid r = Rhomboid(0,0,4,0,5,1,1,1);
+    Rectangle r = Rectangle(0,0,4,0,4,8,0,8);
     cout<<r.getPerimeter()<<endl<<r.getArea();
 
 
