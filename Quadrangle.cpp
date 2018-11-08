@@ -3,7 +3,7 @@
 //
 
 #include "Quadrangle.h"
-#include <math.h>
+#include <cmath>
 
 Quadrangle::Quadrangle(int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4) {
     vertexes[0][0] = x1;
@@ -32,7 +32,7 @@ double Quadrangle::computePerimeter(double s1, double s2, double s3, double s4) 
     return s1+s2+s3+s4;
 }
 
-double Quadrangle::getPermiter() {
+double Quadrangle::getPerimeter() {
     return perimeter;
 }
 
