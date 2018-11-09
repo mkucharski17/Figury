@@ -7,12 +7,16 @@
 
 
 #include "Quadrangle.h"
+#include "Trapezoid.h"
+#include "Rhomboid.h"
+#include "Rectangle.h"
 
 class Menu {
     Quadrangle* quadrangle;
 
 public:
     Menu();
+    void askForCoordinates(Point* cor);
 
 
 
