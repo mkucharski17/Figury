@@ -15,7 +15,7 @@
 class Rectangle: public Rhomboid {
 
 public:
-
+    Rectangle(Point A, Point B, Point C, Point D);
 
 };
 

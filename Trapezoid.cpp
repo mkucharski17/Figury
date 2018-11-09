@@ -3,7 +3,8 @@
 //
 
 #include "Trapezoid.h"
-#include <cmath>
+
+Trapezoid::Trapezoid(Point A, Point B, Point C, Point D):Quadrangle(A,B,C,D) {}
 
 
 
