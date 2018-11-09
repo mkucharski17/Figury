@@ -26,7 +26,7 @@ public:
     void computePerimeter();
     Quadrangle(Point A, Point B, Point C, Point D);
 
-    double getPerimeter() const;
+
 
 
 };

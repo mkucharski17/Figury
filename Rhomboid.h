@@ -15,6 +15,7 @@ class Rhomboid: public Trapezoid{
 
 public:
     Rhomboid(Point A, Point B, Point C, Point D);
+
 };
 
 
