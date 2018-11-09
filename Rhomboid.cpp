@@ -4,5 +4,7 @@
 
 #include "Rhomboid.h"
 
-Rhomboid::Rhomboid(Point A, Point B, Point C, Point D):Trapezoid(A,B,C,D) {}
+Rhomboid::Rhomboid(Point A, Point B, Point C, Point D):Trapezoid(A,B,C,D) {
+    name = "Rhomboid";
+}
 

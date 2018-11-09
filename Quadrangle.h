@@ -11,19 +11,24 @@
 using namespace std;
 
 /*
- * class Quadrangle -use to represent 2D quadrangle
+ * class Quadrangle - use to represent 2D quadrangle
  * Main functions - create quadrangle and compute perimeter;
  */
 
 class Quadrangle {
 
 protected:
+    string name;
     Point vertex[4];
 
 public:
     Point getPoint(int i);
+    void setPoint(int x, int y,int i);
     double computeSide(Point A, Point B);
     void computePerimeter();
+    void symmetryX();
+    void symmetryY();
+    void showCoordinates();
     Quadrangle(Point A, Point B, Point C, Point D);
 
 

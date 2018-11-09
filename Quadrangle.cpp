@@ -10,7 +10,7 @@ Quadrangle::Quadrangle(Point A, Point B, Point C, Point D) {
     vertex[1] = B;
     vertex[2] = C;
     vertex[3] = D;
-
+    name = "Quadrangle";
 }
 
 Point Quadrangle::getPoint(int i) {
@@ -35,9 +35,35 @@ void Quadrangle::computePerimeter() {
 
 }
 
-double Quadrangle::getPerimeter() const {
+void Quadrangle::setPoint(int x, int y , int i) {
+    vertex[i].setX(x);
+    vertex[i].setY(y);
+}
+
+void Quadrangle::symmetryX() {
+
+    for(int i = 0 ; i < 4 ; i++)
+        vertex[i].setY(-vertex[i].getY());
 
 }
+
+void Quadrangle::symmetryY() {
+
+    for(int i = 0 ; i < 4 ; i++)
+        vertex[i].setX(-vertex[i].getX());
+
+}
+
+void Quadrangle::showCoordinates() {
+    char a = 'A';
+    for(int i = 0 ; i < 4 ; i++){
+        cout<<"vertex " <<char(a+i)<<" : ("<<vertex[i].getX();
+        cout<<", "<<vertex[i].getY()<<")"<<endl;
+    }
+
+}
+
+
 
 
 

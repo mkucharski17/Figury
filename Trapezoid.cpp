@@ -5,7 +5,9 @@
 #include "Trapezoid.h"
 #include <cmath>
 
-Trapezoid::Trapezoid(Point A, Point B, Point C, Point D):Quadrangle(A,B,C,D) {}
+Trapezoid::Trapezoid(Point A, Point B, Point C, Point D):Quadrangle(A,B,C,D) {
+    name = "Trapezoid";
+}
 
 void Trapezoid::computeArea() {
     double base1 = computeSide(vertex[0], vertex[1]);
