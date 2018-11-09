@@ -13,9 +13,34 @@ Quadrangle::Quadrangle(Point A, Point B, Point C, Point D) {
 
 }
 
-Point Quadrangle::getPoint(int i){
+Point Quadrangle::getPoint(int i) {
     return vertex[i];
 }
+
+double Quadrangle::computeSide(Point a, Point b) {
+    return sqrt(pow(b.getX() - a.getX(), 2) + pow(b.getY() - a.getY(), 2));
+}
+
+void Quadrangle::computePerimeter() {
+
+    double perimeter = 0;
+
+    for (int i = 0; i < 3; i++)
+
+        perimeter += computeSide(vertex[i], vertex[i + 1]);
+
+    perimeter += computeSide(vertex[3], vertex[0]);
+
+    cout<<perimeter;
+
+}
+
+double Quadrangle::getPerimeter() const {
+
+}
+
+
+
 
 
 
