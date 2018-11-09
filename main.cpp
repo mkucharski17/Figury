@@ -1,14 +1,18 @@
 #include <iostream>
+#include "Point.h"
 #include "Quadrangle.h"
-#include "Trapezoid.h"
-#include "Rhomboid.h"
-#include "Rectangle.h"
+
 
 using namespace std;
 
 int main() {
-    Rectangle r = Rectangle(0,0,4,0,4,8,0,8);
-    cout<<r.getPerimeter()<<endl<<r.getArea();
+    Point p1 = Point(3,0);
+    Point p2 = Point(1,0);
+    Point p3 = Point(1,1);
+    Point p4 = Point(0,1);
+
+
+
 
 
     return 0;

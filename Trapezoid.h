@@ -15,16 +15,6 @@
 
 class Trapezoid : public Quadrangle {
 
-    double base1,base2;
-protected:
-    double area,height;
-
-public:
-    Trapezoid(int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4);
-    double computeArea(double b1, double b2, double h);
-    double computeHeight( int , int , int , int , int ,int );
-    double getArea();
-
 };
 
 

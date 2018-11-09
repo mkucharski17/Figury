@@ -7,20 +7,14 @@
 
 /*
  * class Rhomboid - use to represents 2D rhomboid
- * Main Functions - compute perimeter, compute area, create rhomboid
+ * Main Functions - create rhomboid
  */
-#include "Quadrangle.h"
 #include "Trapezoid.h"
 
 class Rhomboid: public Trapezoid{
 
 public:
     Rhomboid(int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4);
-    double computePerimeter(double s1, double s2);
-    double computeArea( double, double);
-
-
-
 };
 
 
