@@ -16,6 +16,8 @@ using namespace std;
  */
 
 class Quadrangle {
+    double* getShift(double* shift);
+    double& getAngle(double & angle);
 
 protected:
     string name;
@@ -30,13 +32,13 @@ public:
     void symmetryX();
     void symmetryY();
     void symmetryO();
-    void move(double vX , double vY);
-    void rotate(double angle);
+    void move();
+    void rotate();
     void showCoordinates();
     Quadrangle(Point A, Point B, Point C, Point D);
     void symmetry();
 
-
+    const string &getName() const;
 
 
 };

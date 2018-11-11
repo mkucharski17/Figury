@@ -8,7 +8,7 @@
 Menu::Menu(){
     int choice;
     Point coordinates[4];
-    cout<<"chose one from following figure:"<<"1 - random Quadrangle "<<endl<<"2 - Trapezoid "<<endl;
+    cout<<"chose one from following figure:"<<endl<<"1 - Quadrangle "<<endl<<"2 - Trapezoid "<<endl;
     cout<<"3 - Rhomboid "<<endl<<"4 - Rectangle "<<endl<<"0 - Exit";
     cin>>choice;
     askForCoordinates(coordinates);
@@ -56,22 +56,50 @@ void Menu::askForCoordinates(Point* cor) {
 }
 
 void Menu::whatToDoMenu() {
-    int whatToDoChoice;
-    cout<<"chose one from following options:"<<"1 - compute perimeter "<<endl<<"2 - compute area  "<<endl
-    <<"3 - move figure "<<endl<<"4 - rotate figure "<<endl<<"5 - make symmetry"<<endl<<"0 - Exit";
-    cin>>whatToDoChoice;
+    int whatToDoChoice = 1;
+    while(whatToDoChoice != 0) {
+        cout << "chose one from following options:" << endl<< "1 - compute perimeter " << endl << "2 - compute area  "
+        << endl << "3 - move figure " << endl << "4 - rotate figure " << endl << "5 - make symmetry" << endl
+        <<"6 - show coordinates"<<endl;
+        if(quadrangle->getName() == "Rectangle")
+            cout<<"7 - change vertex"<<endl;
+        cout<<"0 - Exit";
+
+        cin >> whatToDoChoice;
 
 
-        switch(whatToDoChoice){
-            case 1: quadrangle->computePerimeter();
+        switch (whatToDoChoice) {
+            case 1:
+                quadrangle->computePerimeter();
+                break;
 
-            case 2: quadrangle->computeArea();
+            case 2:
+                quadrangle->computeArea();
+                break;
+
+            case 3:
+                quadrangle->move();
+                break;
+
+            case 4:
+                quadrangle->rotate();
+                break;
+
+            case 5:
+                quadrangle->symmetry();
+                break;
+
+            case 6:
+                quadrangle->showCoordinates();
+                break;
 
 
-            case 5: quadrangle->symmetry();
+            case 0:
+                whatToDoChoice = 0;
 
 
         }
+    }
 
 
 
