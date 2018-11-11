@@ -35,7 +35,7 @@ void Quadrangle::computePerimeter() {
 
 }
 
-void Quadrangle::setPoint(int x, int y , int i) {
+void Quadrangle::setPoint(int  x, int y , int i) {
     vertex[i].setX(x);
     vertex[i].setY(y);
 }
@@ -53,6 +53,39 @@ void Quadrangle::symmetryY() {
         vertex[i].setX(-vertex[i].getX());
 
 }
+
+void Quadrangle::symmetryO() {
+
+    for(int i = 0 ; i < 4 ; i++) {
+        vertex[i].setX(-vertex[i].getX());
+        vertex[i].setY(-vertex[i].getY());
+    }
+}
+
+void Quadrangle::move(int vX, int vY) {
+    for(int i = 0 ; i < 4 ; i++){
+        vertex[i].setX(vertex[i].getX() + vX);
+        vertex[i].setY(vertex[i].getY() + vY)
+    }
+}
+
+void Quadrangle::rotate(double angle) {
+    for(int i = 0 ; i < 4 ; i++){
+        int x , y , x2 ,y2;
+        x = vertex[i].getX();
+        y = vertex[i].getY();
+
+        x2 = x*cos(angle) - y*sin(angle);
+        y2 = y*sin(angle) + y*cos(angle);
+
+        vertex[i].setX(x2);
+        vertex[i].setY(y2);
+
+    }
+
+}
+
+
 
 void Quadrangle::showCoordinates() {
     char a = 'A';

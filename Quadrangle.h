@@ -12,7 +12,7 @@ using namespace std;
 
 /*
  * class Quadrangle - use to represent 2D quadrangle
- * Main functions - create quadrangle and compute perimeter;
+ * Main functions - create quadrangle and compute perimeter, make symmetry
  */
 
 class Quadrangle {
@@ -28,6 +28,9 @@ public:
     void computePerimeter();
     void symmetryX();
     void symmetryY();
+    void symmetryO();
+    void move(int vX , int vY);
+    void rotate(double angle);
     void showCoordinates();
     Quadrangle(Point A, Point B, Point C, Point D);
 

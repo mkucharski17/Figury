@@ -2,6 +2,8 @@
 // Created by Michal on 09.11.2018.
 //
 
+
+
 #include "Point.h"
 
 Point::Point(int xP , int yP): x(xP),y(yP){}

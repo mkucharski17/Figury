@@ -11,6 +11,11 @@
 #include "Rhomboid.h"
 #include "Rectangle.h"
 
+/*
+ * class Menu - use as interface of this part of project
+ * Main functions - communicate with user
+ */
+
 class Menu {
     Quadrangle* quadrangle;
 

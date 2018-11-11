@@ -10,7 +10,7 @@
 
 /*
  * class Trapezoid - use to represent 2D Trapezoid
- * Main functions - create trapezoid,compute area
+ * Main functions - create trapezoid, compute area, compute height
  */
 
 class Trapezoid : public Quadrangle {

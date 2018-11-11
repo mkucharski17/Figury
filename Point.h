@@ -5,6 +5,11 @@
 #ifndef LAB1_POINT_H
 #define LAB1_POINT_H
 
+/*
+ * class Point - use to represents one point on plane
+ * Main functions -  create point  , change coordinates,
+ */
+
 
 class Point {
 
@@ -12,7 +17,7 @@ class Point {
     int y;
 
 public:
-    Point();
+    Point() ;
 
     Point(int xP, int yP);
 
@@ -24,8 +29,6 @@ public:
 
     void setY(int y);
 };
-
-
 
 
 #endif //LAB1_POINT_H
