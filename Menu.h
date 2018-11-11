@@ -22,7 +22,7 @@ class Menu {
 public:
     Menu();
     void askForCoordinates(Point* cor);
-
+    void whatToDoMenu();
 
 
 

@@ -9,6 +9,7 @@ using namespace std;
 
 int main() {
     Menu m  = Menu();
+    m.whatToDoMenu();
 
 
 

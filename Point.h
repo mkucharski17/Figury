@@ -13,22 +13,23 @@
 
 class Point {
 
-    int x;
-    int y;
+    double x;
+    double y;
 
 public:
     Point() ;
 
-    Point(int xP, int yP);
+    Point(double xP, double  yP);
 
-    int getX() const;
+    double getX() const;
 
-    void setX(int x);
+    void setX(double x);
 
-    int getY() const;
+    double getY() const;
 
-    void setY(int y);
+    void setY(double y);
 };
+
 
 
 #endif //LAB1_POINT_H

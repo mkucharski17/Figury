@@ -35,7 +35,7 @@ void Quadrangle::computePerimeter() {
 
 }
 
-void Quadrangle::setPoint(int  x, int y , int i) {
+void Quadrangle::setPoint(double  x, double y , int i) {
     vertex[i].setX(x);
     vertex[i].setY(y);
 }
@@ -62,16 +62,16 @@ void Quadrangle::symmetryO() {
     }
 }
 
-void Quadrangle::move(int vX, int vY) {
+void Quadrangle::move(double vX, double vY) {
     for(int i = 0 ; i < 4 ; i++){
         vertex[i].setX(vertex[i].getX() + vX);
-        vertex[i].setY(vertex[i].getY() + vY)
+        vertex[i].setY(vertex[i].getY() + vY);
     }
 }
 
 void Quadrangle::rotate(double angle) {
     for(int i = 0 ; i < 4 ; i++){
-        int x , y , x2 ,y2;
+        double x , y , x2 ,y2;
         x = vertex[i].getX();
         y = vertex[i].getY();
 
@@ -80,12 +80,10 @@ void Quadrangle::rotate(double angle) {
 
         vertex[i].setX(x2);
         vertex[i].setY(y2);
-
     }
-
 }
 
-
+void Quadrangle::computeArea() {}
 
 void Quadrangle::showCoordinates() {
     char a = 'A';
@@ -93,7 +91,22 @@ void Quadrangle::showCoordinates() {
         cout<<"vertex " <<char(a+i)<<" : ("<<vertex[i].getX();
         cout<<", "<<vertex[i].getY()<<")"<<endl;
     }
+}
 
+void Quadrangle::symmetry() {
+    int symmetryChoice;
+    cout<<"chose one from following options:"<<"1 - symmetry with respect to X-axis "<<endl
+    <<"2 - symmetry with respect to Y-axis s  "<<endl<<"3 - symmetry with respect to point O(0,0)";
+    cin>>symmetryChoice;
+
+
+    switch(symmetryChoice){
+        case 1: symmetryX();break;
+
+        case 2: symmetryY();break;
+
+        case 3: symmetryO();
+    }
 }
 
 

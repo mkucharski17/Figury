@@ -6,24 +6,25 @@
 
 #include "Point.h"
 
-Point::Point(int xP , int yP): x(xP),y(yP){}
+Point::Point(double xP , double yP): x(xP),y(yP){}
 
-int Point::getX() const {
+
+Point::Point() {}
+
+double Point::getX() const {
     return x;
 }
 
-void Point::setX(int x) {
+void Point::setX(double x) {
     Point::x = x;
 }
 
-int Point::getY() const {
+double Point::getY() const {
     return y;
 }
 
-void Point::setY(int y) {
+void Point::setY(double y) {
     Point::y = y;
 }
-
-Point::Point() {}
 
 
