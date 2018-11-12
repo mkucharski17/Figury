@@ -18,6 +18,9 @@ using namespace std;
 class Quadrangle {
     double* getShift(double* shift);
     double& getAngle(double & angle);
+    double& getscale(double & scale);
+    Point* getVertexesToChange(Point * newVertexes, char* PointsToChange);
+    char* getPointsToChange(char * PointsToChange);
 
 protected:
     string name;
@@ -37,8 +40,11 @@ public:
     void showCoordinates();
     Quadrangle(Point A, Point B, Point C, Point D);
     void symmetry();
-
+    void scaling();
+    void edit();
+    void changeVertex(Point & newPoint, char & pointToChange);
     const string &getName() const;
+
 
 
 };

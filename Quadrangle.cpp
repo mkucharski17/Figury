@@ -92,9 +92,9 @@ void Quadrangle::rotate() {
 void Quadrangle::computeArea() {}
 
 void Quadrangle::showCoordinates() {
-    char a = 'A';
+    char letter = 'A';
     for (int i = 0; i < 4; i++) {
-        cout << "vertex " << char(a + i) << " : (" << vertex[i].getX();
+        cout << "vertex " << char(letter + i) << " : (" << vertex[i].getX();
         cout << ", " << vertex[i].getY() << ")" << endl;
     }
 }
@@ -130,7 +130,7 @@ double *Quadrangle::getShift(double *shift) {
 }
 
 double& Quadrangle::getAngle(double &angle) {
-    cout<<"write an angle: ";
+    cout<<"write an angle: "<<endl;
     cin>>angle;
     return angle;
 
@@ -139,6 +139,74 @@ double& Quadrangle::getAngle(double &angle) {
 const string &Quadrangle::getName() const {
     return name;
 }
+double& Quadrangle::getscale(double &s) {
+    cout<<"write scale: "<<endl;
+    cin>>s;
+    return s;
+}
+
+void Quadrangle::edit() {
+    Point newVertexes[2];
+    char PointsToChange[2];
+    getPointsToChange(PointsToChange);
+    getVertexesToChange(newVertexes,PointsToChange);
+    changeVertex(newVertexes[0],PointsToChange[0]);
+    changeVertex(newVertexes[1],PointsToChange[1]);
+
+
+}
+void Quadrangle::changeVertex(Point & newPoint, char & pointTochange) {
+    char letter = 'A';
+    for(int i = 0 ; i < 4 ; i++, letter++){
+        if(char(letter) == pointTochange){
+            vertex[i].setX(newPoint.getX());
+            vertex[i].setY(newPoint.getY());
+        }
+    }
+
+}
+
+
+
+Point* Quadrangle::getVertexesToChange(Point *newVertexes, char* PointsToChange) {
+    double x1,x2,y1,y2;
+    cout<<"write new coordinates for point "<<PointsToChange[0]<<":"<<endl<<"x = :";
+    cin>>x1;
+    cout<<"y = ";
+    cin>>y1;
+    cout<<"write new coordinates for point "<<PointsToChange[1]<<":"<<endl<<"x = :";
+    cin>>x2;
+    cout<<"y = ";
+    cin>>y2;
+    newVertexes[0].setX(x1);
+    newVertexes[0].setY(y1);
+    newVertexes[1].setX(x2);
+    newVertexes[1].setY(y2);
+    return newVertexes;
+
+
+}
+
+char* Quadrangle::getPointsToChange(char *PointsToChange) {
+    cout<<"write letter of first point which you want to change: "<<endl;
+    cin>>PointsToChange[0];
+    cout<<"write letter of second point which you want to change: "<<endl;
+    cin>>PointsToChange[1];
+    return PointsToChange;
+
+}
+
+void Quadrangle::scaling(){
+    double scale;
+    getscale(scale);
+
+    for(int i = 0 ; i < 4 ; i++){
+        vertex[i].setX(vertex[i].getX()*scale);
+        vertex[i].setY(vertex[i].getY()*scale);
+    }
+}
+
+
 
 
 

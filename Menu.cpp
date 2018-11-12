@@ -9,7 +9,7 @@ Menu::Menu(){
     int choice;
     Point coordinates[4];
     cout<<"chose one from following figure:"<<endl<<"1 - Quadrangle "<<endl<<"2 - Trapezoid "<<endl;
-    cout<<"3 - Rhomboid "<<endl<<"4 - Rectangle "<<endl<<"0 - Exit";
+    cout<<"3 - Rhomboid "<<endl<<"4 - Rectangle "<<endl<<"0 - Exit"<<endl<<"";
     cin>>choice;
     askForCoordinates(coordinates);
 
@@ -60,10 +60,10 @@ void Menu::whatToDoMenu() {
     while(whatToDoChoice != 0) {
         cout << "chose one from following options:" << endl<< "1 - compute perimeter " << endl << "2 - compute area  "
         << endl << "3 - move figure " << endl << "4 - rotate figure " << endl << "5 - make symmetry" << endl
-        <<"6 - show coordinates"<<endl;
+        <<"6 - show coordinates"<<endl<<"7 - scale figure"<<endl;
         if(quadrangle->getName() == "Rectangle")
-            cout<<"7 - change vertex"<<endl;
-        cout<<"0 - Exit";
+            cout<<"9 - change vertex"<<endl;
+        cout<<"0 - Exit"<<endl;
 
         cin >> whatToDoChoice;
 
@@ -92,10 +92,17 @@ void Menu::whatToDoMenu() {
             case 6:
                 quadrangle->showCoordinates();
                 break;
+            case 7:
+                quadrangle->scaling();
+                break;
+            case 8:
+                quadrangle->edit();
+                break;
 
 
             case 0:
                 whatToDoChoice = 0;
+                delete(quadrangle);
 
 
         }

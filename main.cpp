@@ -1,7 +1,4 @@
 #include <iostream>
-#include "Point.h"
-#include "Quadrangle.h"
-#include "Rectangle.h"
 #include "Menu.h"
 
 
