@@ -16,7 +16,7 @@ double Quadrangle::computeSide(Point a, Point b) {
     return sqrt(pow(b.getX() - a.getX(), 2) + pow(b.getY() - a.getY(), 2));
 }
 
-void Quadrangle::computePerimeter() {
+double Quadrangle::computePerimeter() {
 
     double perimeter = 0;
 
@@ -27,6 +27,8 @@ void Quadrangle::computePerimeter() {
     perimeter += computeSide(vertex[3], vertex[0]);
 
     cout << "perimeter = " << perimeter << endl;
+
+    return perimeter;
 
 }
 
@@ -52,7 +54,7 @@ void Quadrangle::symmetryO() {
     }
 }
 
-void Quadrangle::computeArea() {}
+double Quadrangle::computeArea() {}
 
 void Quadrangle::showCoordinates() {
     char letter = 'A';
@@ -189,6 +191,10 @@ char *Quadrangle::getPointsToChange(char *PointsToChange) {
     cin >> PointsToChange[1];
     return PointsToChange;
 
+}
+
+ Point Quadrangle::getVertex(int i){
+    return vertex[i];
 }
 
 

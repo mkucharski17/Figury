@@ -21,7 +21,7 @@ public:
 
     double computeHeight(Point A, Point B, Point C);
 
-    void computeArea() override;
+    double computeArea() override;
 };
 
 

@@ -5,7 +5,6 @@
 #include "Menu.h"
 
 
-
 Menu::Menu() {
     int choice;
     Point coordinates[4];
@@ -81,8 +80,10 @@ void Menu::whatToDoMenu() {
     int whatToDoChoice = 1;
     while (whatToDoChoice != 0) {
         cout << "chose one from following options:" << endl << "1 - compute perimeter " << endl << "2 - compute area  "
-             << endl << "3 - move figure " << endl << "4 - rotate figure " << endl << "5 - make symmetry" << endl
-             << "6 - show coordinates" << endl << "7 - scale figure" << "8 - edit " << endl << "0 - exit " << endl;
+             << endl << "3 - move figure " << endl << "4 - rotate figure with respect to point (0,0) " << endl
+             << "5 - make symmetry" << endl << "6 - show coordinates" << endl << "7 - scale figure" << endl
+             << "8 - edit "
+             << endl << "0 - exit " << endl;
 
         cin >> whatToDoChoice;
 

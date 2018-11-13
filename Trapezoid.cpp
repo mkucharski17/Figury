@@ -8,12 +8,14 @@
 Trapezoid::Trapezoid(Point A, Point B, Point C, Point D) : Quadrangle(A, B, C, D) {
 }
 
-void Trapezoid::computeArea() {
+double Trapezoid::computeArea() {
     double base1 = computeSide(vertex[0], vertex[1]);
     double base2 = computeSide(vertex[2], vertex[3]);
     double height = computeHeight(vertex[0], vertex[1], vertex[2]);
     double area = (base1 + base2) * height / 2;
     cout << "area = " << area << endl;
+
+    return area;
 
 }
 

@@ -25,9 +25,9 @@ public:
 
     double computeSide(Point A, Point B);
 
-    void computePerimeter();
+    double computePerimeter();
 
-    virtual void computeArea();
+    virtual double computeArea();
 
     void symmetryX();
 
@@ -51,8 +51,6 @@ public:
 
     void changeVertex(Point &newPoint, char &pointToChange);
 
-    const string &getName() const;
-
     void getShift();
 
     void getAngle();
@@ -62,6 +60,8 @@ public:
     Point *getVertexesToChange(Point *newVertexes, char *PointsToChange);
 
     char *getPointsToChange(char *PointsToChange);
+
+    Point getVertex(int i);
 
 
 };
