@@ -6,47 +6,51 @@
 
 
 Menu::Menu() {
-    int choice;
+    int choice = 1;
     Point coordinates[4];
-    cout << "chose one from following figure or run automatic tests:" << endl << "1 - Quadrangle " << endl
-         << "2 - Trapezoid " << endl;
-    cout << "3 - Rhomboid " << endl << "4 - Rectangle " << endl << "5 - Automatic tests" << endl << "0 - Exit" << endl;
-    cin >> choice;
-    if (choice != 5) {
-        askForCoordinates(coordinates);
-        mode = 0;
-    } else {
-        setTestCoordinates(coordinates);
-        mode = 1;
+    while(choice != 0) {
+        cout << "chose one from following figure or run automatic tests:" << endl << "1 - Quadrangle " << endl
+             << "2 - Trapezoid " << endl;
+        cout << "3 - Rhomboid " << endl << "4 - Rectangle " << endl << "5 - Automatic tests" << endl << "0 - Exit"
+             << endl;
+        cin >> choice;
+        if (choice != 5 && choice != 0) {
+            askForCoordinates(coordinates);
+            mode = 0;
+        } else {
+            setTestCoordinates(coordinates);
+            mode = 1;
 
-    }
-
-
-    switch (choice) {
-
-        case 1:
-            quadrangle = new Quadrangle(coordinates[0], coordinates[1], coordinates[2], coordinates[3]);
-            break;
-
-        case 2:
-            quadrangle = new Trapezoid(coordinates[0], coordinates[1], coordinates[2], coordinates[3]);
-            break;
-
-        case 3:
-            quadrangle = new Rhomboid(coordinates[0], coordinates[1], coordinates[2], coordinates[3]);
-            break;
-
-        case 4:
-            quadrangle = new Rectangle(coordinates[0], coordinates[1], coordinates[2], coordinates[3]);
-            break;
-        case 5:
-            quadrangle = new Rectangle(coordinates[0], coordinates[1], coordinates[2], coordinates[3]);
-            test = new Test(quadrangle);
-
-        case 0:
-            choice = 0;
+        }
 
 
+        switch (choice) {
+
+            case 1:
+                quadrangle = new Quadrangle(coordinates[0], coordinates[1], coordinates[2], coordinates[3]);
+                break;
+
+            case 2:
+                quadrangle = new Trapezoid(coordinates[0], coordinates[1], coordinates[2], coordinates[3]);
+                break;
+
+            case 3:
+                quadrangle = new Rhomboid(coordinates[0], coordinates[1], coordinates[2], coordinates[3]);
+                break;
+
+            case 4:
+                quadrangle = new Rectangle(coordinates[0], coordinates[1], coordinates[2], coordinates[3]);
+                break;
+            case 5:
+                quadrangle = new Rectangle(coordinates[0], coordinates[1], coordinates[2], coordinates[3]);
+                test = new Test(quadrangle);
+                break;
+
+            case 0:
+                choice = 0;
+
+
+        }
     }
 }
 
@@ -82,8 +86,7 @@ void Menu::whatToDoMenu() {
         cout << "chose one from following options:" << endl << "1 - compute perimeter " << endl << "2 - compute area  "
              << endl << "3 - move figure " << endl << "4 - rotate figure with respect to point (0,0) " << endl
              << "5 - make symmetry" << endl << "6 - show coordinates" << endl << "7 - scale figure" << endl
-             << "8 - edit "
-             << endl << "0 - exit " << endl;
+             << "8 - edit " << endl << "0 - exit " << endl;
 
         cin >> whatToDoChoice;
 

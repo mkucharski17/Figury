@@ -28,7 +28,6 @@ void Test::editTest() {
     else if (quadrangle->getVertex(2).getX() != 5 || quadrangle->getVertex(2).getY() != 4 )
         cout<<"Wrong setting vertex C";
     else{
-    cout << "Marek creates new  rectangle which vertexes are: " << endl;
     quadrangle->showCoordinates();
     }
 
@@ -36,7 +35,6 @@ void Test::editTest() {
 
 void Test::rotateTest() {
     double angle = M_PI / 2;
-    quadrangle->showCoordinates();
     cout << "then Marek makes 90 degrees rotation with respect to point (0,0) and he"
             " hope that it won't change below equality"<<endl;
     quadrangle->rotate(angle);
