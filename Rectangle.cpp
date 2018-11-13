@@ -4,8 +4,7 @@
 
 #include "Rectangle.h"
 
-Rectangle::Rectangle(Point A, Point B, Point C, Point D):Rhomboid(A,B,C,D) {
-    name = "Rectangle";
+Rectangle::Rectangle(Point A, Point B, Point C, Point D) : Rhomboid(A, B, C, D) {
 }
 
 

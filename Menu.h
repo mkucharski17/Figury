@@ -10,6 +10,7 @@
 #include "Trapezoid.h"
 #include "Rhomboid.h"
 #include "Rectangle.h"
+#include "Test.h"
 
 /*
  * class Menu - use as interface of this part of project
@@ -17,13 +18,20 @@
  */
 
 class Menu {
-    Quadrangle* quadrangle;
+    Test *test;
+    Quadrangle *quadrangle;
+    int mode;
 
 public:
     Menu();
-    void askForCoordinates(Point* cor);
+
+    void askForCoordinates(Point *cor);
+
     void whatToDoMenu();
 
+    void setTestCoordinates(Point *testCor);
+
+    int getMode() const;
 
 
 };

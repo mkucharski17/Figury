@@ -18,8 +18,10 @@ class Trapezoid : public Quadrangle {
 
 public:
     Trapezoid(Point A, Point B, Point C, Point D);
-    double computeHeight(Point A, Point B , Point C);
-    void computeArea();
+
+    double computeHeight(Point A, Point B, Point C);
+
+    void computeArea() override;
 };
 
 

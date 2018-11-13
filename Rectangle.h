@@ -7,12 +7,13 @@
 
 
 #include "Rhomboid.h"
+
 /*
  * class Rectangle - use to represents 2D rectangle
  * Main Functions - create rectangle
  */
 
-class Rectangle: public Rhomboid {
+class Rectangle : public Rhomboid {
 
 public:
     Rectangle(Point A, Point B, Point C, Point D);

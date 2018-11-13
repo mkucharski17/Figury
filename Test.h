@@ -9,13 +9,18 @@
 #include "Quadrangle.h"
 
 class Test {
-    Quadrangle* quadrangle;
+    Quadrangle *quadrangle;
 public:
-    explicit Test(Quadrangle* quad): quadrangle(quad);
+    explicit Test(Quadrangle *quad);
+
     void editTest();
+
     void scalingTest();
+
     void rotateTest();
+
     void symmetryTest();
+
     void moveTest();
 
 

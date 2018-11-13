@@ -4,6 +4,7 @@
 
 #ifndef LAB1_RHOMBOID_H
 #define LAB1_RHOMBOID_H
+
 #include "Trapezoid.h"
 
 /*
@@ -11,13 +12,12 @@
  * Main Functions - create rhomboid
  */
 
-class Rhomboid: public Trapezoid{
+class Rhomboid : public Trapezoid {
 
 public:
     Rhomboid(Point A, Point B, Point C, Point D);
 
 };
-
 
 
 #endif //LAB1_RHOMBOID_H

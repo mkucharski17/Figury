@@ -6,7 +6,7 @@
 
 #include "Point.h"
 
-Point::Point(double xP , double yP): x(xP),y(yP){}
+Point::Point(double xP, double yP) : x(xP), y(yP) {}
 
 
 Point::Point() {}
