@@ -25,8 +25,7 @@ double Quadrangle::computePerimeter() {
         perimeter += computeSide(vertex[i], vertex[i + 1]);
 
     perimeter += computeSide(vertex[3], vertex[0]);
-
-    cout << "perimeter = " << perimeter << endl;
+    cout << " Figure perimeter = " << perimeter << endl;
 
     return perimeter;
 

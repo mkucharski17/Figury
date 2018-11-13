@@ -25,10 +25,10 @@ void Test::editTest() {
     }
     if(quadrangle->getVertex(1).getX() != 5 || quadrangle->getVertex(1).getY() != 1 )
         cout<<"Wrong setting vertex B";
-    else if (quadrangle->getVertex(2).getX() != 5 || quadrangle->getVertex(2).getX() != 4 )
+    else if (quadrangle->getVertex(2).getX() != 5 || quadrangle->getVertex(2).getY() != 4 )
         cout<<"Wrong setting vertex C";
     else{
-    cout << "New correctly rectangle vertexes are: " << endl;
+    cout << "Marek creates new  rectangle which vertexes are: " << endl;
     quadrangle->showCoordinates();
     }
 
@@ -36,35 +36,14 @@ void Test::editTest() {
 
 void Test::rotateTest() {
     double angle = M_PI / 2;
-    cout << "User creates rectangle which perimeter = 12 with following vertexes: " << endl;
     quadrangle->showCoordinates();
-    cout << "User makes 90 degrees rotation with respect to point (0,0)" << endl;
+    cout << "then Marek makes 90 degrees rotation with respect to point (0,0) and he"
+            " hope that it won't change below equality"<<endl;
     quadrangle->rotate(angle);
     if(quadrangle->computePerimeter() != 14)
         cout<<"error in computing perimeter";
     else {
-        cout << "New rectangle's perimeter also equals 12 and it's vertexes are:" << endl;
-        quadrangle->showCoordinates();
-    }
-
-
-}
-
-void Test::symmetryTest() {
-    int error = 0;
-    cout << "Customer creates rectangle with following vertexes: " << endl;
-    quadrangle->showCoordinates();
-    Quadrangle * tempQuadrangle = quadrangle;
-    cout << "Customer makes symmetry with respect to Y-axis" << endl;
-    quadrangle->symmetryY();
-    for(int i = 0 ; i < 0 ; i++){
-        if(quadrangle->getVertex(i).getX() != -tempQuadrangle->getVertex(i).getX()) {
-            cout << "symmetry with respect to Y-axis is not properly";
-            error++;
-        }
-    }
-    if(error == 0) {
-        cout << "New rectangle vertexes are:" << endl;
+        cout << "Fortunately new rectangle's perimeter also equals 14 and it's vertexes are:" << endl;
         quadrangle->showCoordinates();
     }
 
@@ -74,10 +53,8 @@ void Test::symmetryTest() {
 void Test::moveTest() {
     double shift[2] = {8, 6};
     int error = 0;
-    cout << "Marta creates rectangle with following vertexes: " << endl;
-    quadrangle->showCoordinates();
     Quadrangle * tempQuadrangle = quadrangle;
-    cout << "She moves vector along vector (8,6)" << endl;
+    cout << "Next step he makes is moving rectangle  along vector (8,6)" << endl;
     quadrangle->move(shift);
     for(int i = 0 ; i < 0 ; i++){
         if(quadrangle->getVertex(i).getX() != tempQuadrangle->getVertex(i).getX() + shift[0]) {
@@ -90,17 +67,36 @@ void Test::moveTest() {
         }
     }
     if(error == 0 ) {
-        cout << "New rectangle vertexes are:" << endl;
+        cout << "It goes well so new rectangle's vertexes are:" << endl;
         quadrangle->showCoordinates();
     }
 }
 
+void Test::symmetryTest() {
+    int error = 0;
+    Quadrangle * tempQuadrangle = quadrangle;
+    cout << "After one minute of thinking Marek decide to make symmetry with respect to Y-axis" << endl;
+    quadrangle->symmetryY();
+    for(int i = 0 ; i < 0 ; i++){
+        if(quadrangle->getVertex(i).getX() != -tempQuadrangle->getVertex(i).getX()) {
+            cout << "symmetry with respect to Y-axis is not properly";
+            error++;
+        }
+    }
+    if(error == 0) {
+        cout << "This action changes his rectangle's vertexes to:" << endl;
+        quadrangle->showCoordinates();
+    }
+
+
+}
+
+
+
 void Test::scalingTest() {
     int error = 0;
-    cout << "Stasio creates rectangle with following vertexes: " << endl;
-    quadrangle->showCoordinates();
     Quadrangle * tempQuadrangle = quadrangle;
-    cout << "He scales rectangle with scale = 4" << endl;
+    cout << "Last idea which he come up with is scaling rectangle with scale = 4" << endl;
     quadrangle->scaling(4);
     for(int i = 0 ; i < 0 ; i++) {
         if (quadrangle->getVertex(i).getX() != 4 * tempQuadrangle->getVertex(i).getX()) {
@@ -113,7 +109,7 @@ void Test::scalingTest() {
         }
     }
     if(error == 0) {
-        cout << "Stasio's rectangle's vertexes after good scaling are:" << endl;
+        cout << "After this He is very happy because it's also goes well and Finally his Rectangle vertexes are::" << endl;
         quadrangle->showCoordinates();
     }
 }
