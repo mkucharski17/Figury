@@ -5,11 +5,6 @@
 #include "Test.h"
 
 Test::Test(Quadrangle *quad) : quadrangle(quad) {
-    editTest();
-    rotateTest();
-    moveTest();
-    symmetryTest();
-    scalingTest();
 }
 
 void Test::editTest() {
@@ -110,6 +105,15 @@ void Test::scalingTest() {
         cout << "After this He is very happy because it's also goes well and Finally his Rectangle vertexes are::" << endl;
         quadrangle->showCoordinates();
     }
+}
+
+void Test::runTests() {
+    editTest();
+    rotateTest();
+    moveTest();
+    symmetryTest();
+    scalingTest();
+
 }
 
 

@@ -7,6 +7,11 @@
 
 
 #include "Quadrangle.h"
+/*
+ * class Menu - use to check why methods do not work properly
+ * Main functions - make tests for all functions of program
+ */
+
 
 class Test {
     Quadrangle *quadrangle;
@@ -22,6 +27,8 @@ public:
     void symmetryTest();
 
     void moveTest();
+
+    void runTests();
 
 
 };

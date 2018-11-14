@@ -8,8 +8,9 @@
 Menu::Menu() {
     int choice = 1;
     Point coordinates[4];
-    while(choice != 0) {
-        cout << "chose one from following figure or run automatic tests:" << endl << "1 - Quadrangle " << endl
+    while (choice != 0) {
+        cout << endl << endl << "chose one from following figure or run automatic tests:" << endl << "1 - Quadrangle "
+             << endl
              << "2 - Trapezoid " << endl;
         cout << "3 - Rhomboid " << endl << "4 - Rectangle " << endl << "5 - Automatic tests" << endl << "0 - Exit"
              << endl;
@@ -48,6 +49,7 @@ Menu::Menu() {
             case 5:
                 quadrangle = new Rectangle(coordinates[0], coordinates[1], coordinates[2], coordinates[3]);
                 test = new Test(quadrangle);
+                test->runTests();
                 break;
 
             case 0:
@@ -87,7 +89,8 @@ void Menu::setTestCoordinates(Point *testCor) {
 void Menu::whatToDoMenu() {
     int whatToDoChoice = 1;
     while (whatToDoChoice != 0) {
-        cout << "chose one from following options:" << endl << "1 - compute perimeter " << endl << "2 - compute area  "
+        cout << endl << endl << "chose one from following options:" << endl << "1 - compute perimeter " << endl
+             << "2 - compute area  "
              << endl << "3 - move figure " << endl << "4 - rotate figure with respect to point (0,0) " << endl
              << "5 - make symmetry" << endl << "6 - show coordinates" << endl << "7 - scale figure" << endl
              << "8 - edit " << endl << "0 - exit " << endl;
@@ -172,7 +175,8 @@ void Menu::getAngle() {
 
 void Menu::chooseSymmetry() {
     int symmetryChoice;
-    cout << "chose one from following options:" << "1 - symmetry with respect to X-axis " << endl
+    cout << endl << endl << "chose one from following options:" << endl << "1 - symmetry with respect to X-axis "
+         << endl
          << "2 - symmetry with respect to Y-axis s  " << endl << "3 - symmetry with respect to point O(0,0)";
     cin >> symmetryChoice;
 
@@ -192,11 +196,11 @@ void Menu::chooseSymmetry() {
 }
 
 void Menu::showPerimeter() {
-    cout<<"Perimeter = "<<quadrangle->computePerimeter();
+    cout << "Perimeter = " << quadrangle->computePerimeter();
 }
 
-void Menu::showArea(){
-    cout<<"Area = "<< quadrangle->computeArea();
+void Menu::showArea() {
+    cout << "Area = " << quadrangle->computeArea();
 }
 
 
