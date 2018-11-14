@@ -25,7 +25,6 @@ double Quadrangle::computePerimeter() {
         perimeter += computeSide(vertex[i], vertex[i + 1]);
 
     perimeter += computeSide(vertex[3], vertex[0]);
-    cout << "Figure perimeter = " << perimeter << endl;
 
     return perimeter;
 
@@ -55,44 +54,6 @@ void Quadrangle::symmetryO() {
 
 double Quadrangle::computeArea() {}
 
-void Quadrangle::showCoordinates() {
-    char letter = 'A';
-    for (int i = 0; i < 4; i++) {
-        cout << "vertex " << char(letter + i) << " : (" << vertex[i].getX();
-        cout << ", " << vertex[i].getY() << ")" << endl;
-    }
-}
-
-void Quadrangle::symmetry() {
-    int symmetryChoice;
-    cout << "chose one from following options:" << "1 - symmetry with respect to X-axis " << endl
-         << "2 - symmetry with respect to Y-axis s  " << endl << "3 - symmetry with respect to point O(0,0)";
-    cin >> symmetryChoice;
-
-
-    switch (symmetryChoice) {
-        case 1:
-            symmetryX();
-            break;
-
-        case 2:
-            symmetryY();
-            break;
-
-        case 3:
-            symmetryO();
-    }
-}
-
-void Quadrangle::getShift() {
-    double shift[2];
-    cout << "write X shift: ";
-    cin >> shift[0];
-    cout << "write Y shift: ";
-    cin >> shift[1];
-    move(shift);
-}
-
 
 void Quadrangle::move(double *shift) {
 
@@ -102,13 +63,6 @@ void Quadrangle::move(double *shift) {
     }
 }
 
-void Quadrangle::getAngle() {
-    double angle;
-    cout << "write an angle: " << endl;
-    cin >> angle;
-    rotate(angle);
-
-}
 
 void Quadrangle::rotate(double angle) {
 
@@ -126,14 +80,6 @@ void Quadrangle::rotate(double angle) {
 }
 
 
-void Quadrangle::getscale() {
-    double scale;
-    cout << "write scale: " << endl;
-    cin >> scale;
-    scaling(scale);
-
-}
-
 void Quadrangle::scaling(double scale) {
 
     for (int i = 0; i < 4; i++) {
@@ -142,15 +88,6 @@ void Quadrangle::scaling(double scale) {
     }
 }
 
-
-void Quadrangle::edit() {
-    Point newVertexes[2];
-    char PointsToChange[2];
-    getPointsToChange(PointsToChange);
-    getVertexesToChange(newVertexes, PointsToChange);
-    changeVertex(newVertexes[0], PointsToChange[0]);
-    changeVertex(newVertexes[1], PointsToChange[1]);
-}
 
 void Quadrangle::changeVertex(Point &newPoint, char &pointTochange) {
     char letter = 'A';
@@ -164,37 +101,20 @@ void Quadrangle::changeVertex(Point &newPoint, char &pointTochange) {
 }
 
 
-Point *Quadrangle::getVertexesToChange(Point *newVertexes, char *PointsToChange) {
-    double x1, x2, y1, y2;
-    cout << "write new coordinates for point " << PointsToChange[0] << ":" << endl << "x = :";
-    cin >> x1;
-    cout << "y = ";
-    cin >> y1;
-    cout << "write new coordinates for point " << PointsToChange[1] << ":" << endl << "x = :";
-    cin >> x2;
-    cout << "y = ";
-    cin >> y2;
-    newVertexes[0].setX(x1);
-    newVertexes[0].setY(y1);
-    newVertexes[1].setX(x2);
-    newVertexes[1].setY(y2);
-    return newVertexes;
-
-
-}
-
-char *Quadrangle::getPointsToChange(char *PointsToChange) {
-    cout << "write letter of first point which you want to change: " << endl;
-    cin >> PointsToChange[0];
-    cout << "write letter of second point which you want to change: " << endl;
-    cin >> PointsToChange[1];
-    return PointsToChange;
-
-}
 
  Point Quadrangle::getVertex(int i){
     return vertex[i];
 }
+
+
+void Quadrangle::showCoordinates() {
+    char letter = 'A';
+    for (int i = 0; i < 4; i++) {
+        cout << "vertex " << char(letter + i) << " : (" <<vertex[i].getX();
+        cout << ", " << vertex[i].getY() << ")" << endl;
+    }
+}
+
 
 
 

@@ -39,27 +39,21 @@ public:
 
     void rotate(double angle);
 
-    void showCoordinates();
 
     Quadrangle(Point A, Point B, Point C, Point D);
 
-    void symmetry();
+
+    void showCoordinates();
+
+
 
     void scaling(double scale);
 
-    void edit();
+
 
     void changeVertex(Point &newPoint, char &pointToChange);
 
-    void getShift();
 
-    void getAngle();
-
-    void getscale();
-
-    Point *getVertexesToChange(Point *newVertexes, char *PointsToChange);
-
-    char *getPointsToChange(char *PointsToChange);
 
     Point getVertex(int i);
 

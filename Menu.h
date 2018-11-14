@@ -33,6 +33,25 @@ public:
 
     int getMode() const;
 
+    void getscale();
+
+    void getShift();
+
+    void getAngle();
+
+    void chooseSymmetry();
+
+
+    void showPerimeter();
+
+    void showArea();
+
+    void editChoice();
+
+    Point *getVertexesToChange(Point *newVertexes, char *PointsToChange);
+
+    char *getPointsToChange(char *PointsToChange);
+
 
 };
 

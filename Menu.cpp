@@ -28,18 +28,22 @@ Menu::Menu() {
 
             case 1:
                 quadrangle = new Quadrangle(coordinates[0], coordinates[1], coordinates[2], coordinates[3]);
+                whatToDoMenu();
                 break;
 
             case 2:
                 quadrangle = new Trapezoid(coordinates[0], coordinates[1], coordinates[2], coordinates[3]);
+                whatToDoMenu();
                 break;
 
             case 3:
                 quadrangle = new Rhomboid(coordinates[0], coordinates[1], coordinates[2], coordinates[3]);
+                whatToDoMenu();
                 break;
 
             case 4:
                 quadrangle = new Rectangle(coordinates[0], coordinates[1], coordinates[2], coordinates[3]);
+                whatToDoMenu();
                 break;
             case 5:
                 quadrangle = new Rectangle(coordinates[0], coordinates[1], coordinates[2], coordinates[3]);
@@ -93,33 +97,34 @@ void Menu::whatToDoMenu() {
 
         switch (whatToDoChoice) {
             case 1:
-                quadrangle->computePerimeter();
+                showPerimeter();
                 break;
 
             case 2:
-                quadrangle->computeArea();
+                showArea();
                 break;
 
             case 3:
-                quadrangle->getShift();
+                getShift();
                 break;
 
             case 4:
-                quadrangle->getAngle();
+                getAngle();
                 break;
 
             case 5:
-                quadrangle->symmetry();
+                chooseSymmetry();
                 break;
 
             case 6:
                 quadrangle->showCoordinates();
                 break;
             case 7:
-                quadrangle->getscale();
+                getscale();
+
                 break;
             case 8:
-                quadrangle->edit();
+                editChoice();
                 break;
 
 
@@ -136,5 +141,99 @@ void Menu::whatToDoMenu() {
 
 int Menu::getMode() const {
     return mode;
+}
+
+void Menu::getscale() {
+    double scale;
+    cout << "write scale: " << endl;
+    cin >> scale;
+    quadrangle->scaling(scale);
+
+}
+
+
+void Menu::getShift() {
+    double shift[2];
+    cout << "write X shift: ";
+    cin >> shift[0];
+    cout << "write Y shift: ";
+    cin >> shift[1];
+    quadrangle->move(shift);
+}
+
+void Menu::getAngle() {
+    double angle;
+    cout << "write an angle: " << endl;
+    cin >> angle;
+    quadrangle->rotate(angle);
+
+}
+
+
+void Menu::chooseSymmetry() {
+    int symmetryChoice;
+    cout << "chose one from following options:" << "1 - symmetry with respect to X-axis " << endl
+         << "2 - symmetry with respect to Y-axis s  " << endl << "3 - symmetry with respect to point O(0,0)";
+    cin >> symmetryChoice;
+
+
+    switch (symmetryChoice) {
+        case 1:
+            quadrangle->symmetryX();
+            break;
+
+        case 2:
+            quadrangle->symmetryY();
+            break;
+
+        case 3:
+            quadrangle->symmetryO();
+    }
+}
+
+void Menu::showPerimeter() {
+    cout<<"Perimeter = "<<quadrangle->computePerimeter();
+}
+
+void Menu::showArea(){
+    cout<<"Area = "<< quadrangle->computeArea();
+}
+
+
+char *Menu::getPointsToChange(char *PointsToChange) {
+    cout << "write letter of first point which you want to change: " << endl;
+    cin >> PointsToChange[0];
+    cout << "write letter of second point which you want to change: " << endl;
+    cin >> PointsToChange[1];
+    return PointsToChange;
+
+}
+
+
+Point *Menu::getVertexesToChange(Point *newVertexes, char *PointsToChange) {
+    double x1, x2, y1, y2;
+    cout << "write new coordinates for point " << PointsToChange[0] << ":" << endl << "x = :";
+    cin >> x1;
+    cout << "y = ";
+    cin >> y1;
+    cout << "write new coordinates for point " << PointsToChange[1] << ":" << endl << "x = :";
+    cin >> x2;
+    cout << "y = ";
+    cin >> y2;
+    newVertexes[0].setX(x1);
+    newVertexes[0].setY(y1);
+    newVertexes[1].setX(x2);
+    newVertexes[1].setY(y2);
+    return newVertexes;
+
+}
+
+void Menu::editChoice() {
+    Point newVertexes[2];
+    char PointsToChange[2];
+    getPointsToChange(PointsToChange);
+    getVertexesToChange(newVertexes, PointsToChange);
+    quadrangle->changeVertex(newVertexes[0], PointsToChange[0]);
+    quadrangle->changeVertex(newVertexes[1], PointsToChange[1]);
 }
 

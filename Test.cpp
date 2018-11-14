@@ -36,7 +36,7 @@ void Test::editTest() {
 void Test::rotateTest() {
     double angle = M_PI / 2;
     cout << "then Marek makes 90 degrees rotation with respect to point (0,0) and he"
-            " hope that it won't change below equality"<<endl;
+            " hope that it won't change perimeter"<<endl;
     quadrangle->rotate(angle);
     if(quadrangle->computePerimeter() != 14)
         cout<<"error in computing perimeter";
