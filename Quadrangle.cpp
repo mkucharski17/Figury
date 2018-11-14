@@ -101,8 +101,7 @@ void Quadrangle::changeVertex(Point &newPoint, char &pointTochange) {
 }
 
 
-
- Point Quadrangle::getVertex(int i){
+Point Quadrangle::getVertex(int i) {
     return vertex[i];
 }
 
@@ -110,7 +109,7 @@ void Quadrangle::changeVertex(Point &newPoint, char &pointTochange) {
 void Quadrangle::showCoordinates() {
     char letter = 'A';
     for (int i = 0; i < 4; i++) {
-        cout << "vertex " << char(letter + i) << " : (" <<vertex[i].getX();
+        cout << "vertex " << char(letter + i) << " : (" << vertex[i].getX();
         cout << ", " << vertex[i].getY() << ")" << endl;
     }
 }

@@ -46,13 +46,10 @@ public:
     void showCoordinates();
 
 
-
     void scaling(double scale);
 
 
-
     void changeVertex(Point &newPoint, char &pointToChange);
-
 
 
     Point getVertex(int i);
